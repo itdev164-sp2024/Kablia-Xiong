@@ -3,6 +3,9 @@
  *
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
  */
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+})
 
 /**
  * @type {import('gatsby').GatsbyConfig}
@@ -13,7 +16,7 @@ module.exports = {
     description: ``,
     author: `Kablia Xiong`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
-    contact: { 
+    contact: {
       name: `Kablia Xiong`,
       company: `Blogs Inc.`,
       address: `PO Box 1234`
@@ -23,10 +26,10 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceID:`${process.env.SPACE_ID}`,
+        spaceId: `${process.env.SPACE_ID}`,
         accessToken: `${process.env.ACCESS_TOKEN}`
       }
-    }
+    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
