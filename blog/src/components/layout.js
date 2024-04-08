@@ -5,6 +5,7 @@ import styled, { ThemeProvider } from "styled-components"
 
 import { Gray } from "./themes/Gray"
 import { Header } from "./Header"
+import { Main } from './Main'
 import "./layout.css"
 
 const Content = styled.div`
