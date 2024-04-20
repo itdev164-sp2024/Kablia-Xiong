@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import styled from 'styled-components'
 import { H1 } from '../Heading'
+import { IconButton } from '../Button'
 import { Section } from '../Section'
 
 const StyledHeader = styled.header`
@@ -20,18 +21,18 @@ const StyledLink = styled(Link)`
   color: ${props => props.theme.header.color};
 `
 const Header = ({ siteTitle }) => (
-  <StyledHeader>
+  <Outer>
     <Section width={11/12}>
-      <StyledLink to="/">
-        <H1>
+      <H1>
+        <StyledLink to="/">
           {siteTitle}
-        </H1>
-      </StyledLink>
+        </StyledLink>
+      </H1>
     </Section>
     <Section width={1/12}>
-      Search
+      <IconButton icon={<Search />} />
     </Section>
-  </StyledHeader>
+  </Outer>
 )
 
 Header.propTypes = {
